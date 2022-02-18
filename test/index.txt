@@ -1,0 +1,4 @@
+  image: ipfs.infura.io/ipfs/Qmbopm6R9jEE6yjZaRpS1gbkD9V2e6zqbxxCZtvJG4eTRa/530.png,
+
+  token_address: "0xb3a6e5f8982ed3b02a04159d1bde864ebed23c82"
+  owner: "0x28E5945D443457716b3C2D6063d14C332D45e6a3"
