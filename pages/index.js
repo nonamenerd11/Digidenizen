@@ -1,8 +1,19 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useMoralis } from "react-moralis";
 import MainSection from "../components/MainSection";
-import NFT from "../components/NFT";
 
 export default function Home() {
+  const { user, account, isAuthenticated } = useMoralis();
+  const router = useRouter();
+
+  const handleRedirect = async () => {
+    const d = await user;
+    if (d.attributes.discordId) {
+      router.push(`/${account}`);
+    } else return alert("You need to enter your discordId to proceed");
+  };
+
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <Head>
@@ -12,7 +23,14 @@ export default function Home() {
       </Head>
       <div className="w-full flex flex-col items-center justify-center">
         <MainSection />
-        <NFT />
+        <div
+          className={`bg-discord rounded-md p-4 mt-5 cursor-pointer ${
+            isAuthenticated ? "visible" : "hidden"
+          } `}
+          onClick={handleRedirect}
+        >
+          GET NFT records
+        </div>
       </div>
     </div>
   );
