@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Router from "next/router";
 import React, { useEffect } from "react";
 import { useChain, useMoralis } from "react-moralis";
@@ -43,7 +44,7 @@ const Header = () => {
     <div className="w-full flex flex-col items-center justify-center">
       <div className="w-[94%] p-3 flex justify-between items-center">
         <p className="text-2xl font-bold text-white cursor-pointer">
-          Discord Add
+          <Link href={"/"}>Discord Add</Link>
         </p>
         <div className="flex flex-row-reverse items-center">
           <p

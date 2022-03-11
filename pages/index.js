@@ -10,7 +10,7 @@ export default function Home() {
   const handleRedirect = async () => {
     const d = await user;
     if (d.attributes.discordId) {
-      router.push(`/${account}`);
+      router.push(`/${d.attributes.discordId}`);
     } else return alert("You need to enter your discordId to proceed");
   };
 
